@@ -2,7 +2,7 @@
 # Copies existing vanilla EU4 files to a temporary work dir and patches them
 # Make sure to check the paths below if you use this script
 
-VANILLA_DIR="/d/steamgames/SteamApps/common/Europa Universalis IV"
+VANILLA_DIR="/c/Program Files (x86)/Steam/SteamApps/common/Europa Universalis IV"
 MOD_DIR="/c/Users/gekko/Documents/Paradox Interactive/Europa Universalis IV/mod/gtech2"
 
 if [ ! -d "$VANILLA_DIR" ]; then
