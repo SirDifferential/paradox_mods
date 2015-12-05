@@ -1,6 +1,6 @@
 name="Global Tech"
 path="mod/gtech"
-supported_version="1.13.1.0"
+supported_version="1.14.2.0"
 replace_path="history/countries"
 replace_path="events/flavorMNG.txt"
 replace_path="decisions/BukharaNation.txt"

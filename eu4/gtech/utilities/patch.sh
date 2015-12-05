@@ -2,6 +2,7 @@
 # Copies existing vanilla EU4 files to a temporary work dir and patches them
 # Make sure to check the paths below if you use this script
 
+ORIGIN_DIR=$(pwd)
 VANILLA_DIR="/c/Program Files (x86)/Steam/SteamApps/common/Europa Universalis IV"
 MOD_DIR="/c/Users/gekko/Documents/Paradox Interactive/Europa Universalis IV/mod/gtech2"
 
@@ -38,6 +39,9 @@ cd "$MOD_DIR/work/history/countries"
 
 echo "Patching native governments to feudal monarchy to prevent native american tech cheat"
 sed -i 's/.*native_council.*/government = feudal_monarchy/g' *
+
+#echo "Patching steppe governments to feudal monarchy as they cannot change their government"
+#sed -i 's/.*steppe_horde.*/government = feudal_monarchy/g' *
 
 echo "Patching all tech groups to western"
 sed -i 's/.*technology_group.*/technology_group = western/g' *
@@ -95,4 +99,8 @@ cp -v "$VANILLA_DIR/decisions/Tribal.txt" "$MOD_DIR/work/decisions/"
 cd "$MOD_DIR/work/decisions"
 sed -i 's/.*change_technology_group.*/change_technology_group = western/g' *
 sed -i 's/.*change_unit_type.*/change_unit_type = western/g' *
+
+echo "Copying .mod file to $MOD_DIR"
+cd $ORIGIN_DIR
+cp ../../gtech.mod "$MOD_DIR/"
 echo "All done!"
